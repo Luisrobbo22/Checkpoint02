@@ -34,7 +34,7 @@ public class Funcionario implements Serializable {
     private List<SolicitacaoCompra> solicitacaoCompras;
 
     @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-    @JoinTable(name = "LFL_ATIVIDADE",
+    @JoinTable(name = "LFL_FUNCIONARIO_ATIVIDADE",
             joinColumns = @JoinColumn(name = "id_funcionario_solicitante"),
             inverseJoinColumns = @JoinColumn(name = "id_atividade"))
     private List<Atividade> atividades;
@@ -56,13 +56,6 @@ public class Funcionario implements Serializable {
         this.dataNascimento = dataNascimento;
     }
 
-    public Funcionario(String nome, String cpf, String rg, Calendar dataNascimento, List<Atividade> atividades) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.rg = rg;
-        this.dataNascimento = dataNascimento;
-        this.atividades = atividades;
-    }
 
     public Integer getId() {
         return id;

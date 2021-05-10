@@ -49,24 +49,24 @@ public class CadastroTeste {
                 new Atividade("Descrição da tividade 01", Calendar.getInstance(), new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR),
                         Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DATE + 1)));
 
-//        Atividade atividade2 =
-//                new Atividade("Descrição da tividade 02", Calendar.getInstance(), new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR),
-//                        Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DATE + 1)));
+        Atividade atividade2 =
+                new Atividade("Descrição da tividade 02", Calendar.getInstance(), new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR),
+                        Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DATE + 1)));
+
+        atividade1.addFuncionarios(funcionario);
+        atividade2.addFuncionarios(funcionario);
 
         List<Atividade> atividades = new ArrayList<>();
-        atividades.addAll(Arrays.asList(atividade1));
+        atividades.addAll(Arrays.asList(atividade1, atividade2));
 
         log.info("[CadastroTeste] - Relacionando as Entidades");
 
         fornecedor.addSolicitacaoCompra(solicitacaoCompra);
         funcionario.addSolicitacaoCompra(solicitacaoCompra);
-        atividade1.setFuncionarios(funcionarios);
-        atividade1.setFuncionarios(funcionarios);
+        funcionario.setAtividades(atividades);
 
 
-        log.info("[CadastroTeste] - ");
-
-
+        log.info("[CadastroTeste] - Cadastrando todos pela entidade SolicitacaoCompra");
 
         try {
             solicitacaoCompraDao.create(solicitacaoCompra);

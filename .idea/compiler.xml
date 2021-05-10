@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="01-Checkpoint-Enterprise" />
         <module name="Checkpoint02" />
         <module name="08-JPA-JPQL-Apostila" />
+        <module name="01-Checkpoint-Enterprise" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
